@@ -1,0 +1,375 @@
+
+> ask_user@1.0.0 test
+> vitest run --passWithNoTests
+
+
+ RUN  v5.0.3 /Users/sepehr/.pi/agent/extensions/ask_user
+
+ ❯ tests/ask.test.ts (22 tests | 22 failed) 8ms
+   ❯ askUser (22)
+     × returns answered with option source when user picks an option 2ms
+     × returns the chosen bare label even when recommendation is present 0ms
+     × trims custom answer and returns it with custom source 0ms
+     × returns cancelled dismissed when select resolves undefined 0ms
+     × returns cancelled dismissed when input resolves undefined 0ms
+     × returns cancelled empty_answer when custom input is empty string 0ms
+     × returns cancelled empty_answer when custom input is whitespace only 0ms
+     × returns unavailable when hasUI is false and does not call UI 0ms
+     × accepts three options and opens dialog normally 0ms
+     × passes correct title and entries to select 0ms
+     × does not fall back to recommendation when select is dismissed 0ms
+     × does not fall back to recommendation when custom answer is empty 0ms
+     ❯ invalid inputs throw validation error and open no dialog (8)
+       × throws for exactly 1 option 2ms
+       × throws for exactly 4 options 0ms
+       × throws for duplicate labels (case-insensitive) 0ms
+       × throws for empty question 0ms
+       × throws for empty reason 0ms
+       × throws for recommendation that does not match any option label 0ms
+       × throws for option label equal to Write my own answer… (case-insensitive) 0ms
+       × error message does not say not implemented 0ms
+     × returns cancelled dismissed when signal is already aborted 0ms
+     × works with signal undefined 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 22 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns answered with option source when user picks an option
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:63:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns the chosen bare label even when recommendation is present
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:77:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > trims custom answer and returns it with custom source
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:99:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns cancelled dismissed when select resolves undefined
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:112:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns cancelled dismissed when input resolves undefined
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:121:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns cancelled empty_answer when custom input is empty string
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:130:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns cancelled empty_answer when custom input is whitespace only
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:139:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns unavailable when hasUI is false and does not call UI
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:146:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > accepts three options and opens dialog normally
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:164:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > passes correct title and entries to select
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:186:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > does not fall back to recommendation when select is dismissed
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:203:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > does not fall back to recommendation when custom answer is empty
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:216:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for exactly 1 option
+AssertionError: expected [Function] to throw error matching /option/i but got 'not implemented'
+
+- Expected:
+/option/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:234:58
+    232|         options: [{ label: "A", tradeoff: "B" }],
+    233|       };
+    234|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    235|         /option/i
+    236|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for exactly 4 options
+AssertionError: expected [Function] to throw error matching /option/i but got 'not implemented'
+
+- Expected:
+/option/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:252:58
+    250|         ],
+    251|       };
+    252|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    253|         /option/i
+    254|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for duplicate labels (case-insensitive)
+AssertionError: expected [Function] to throw error matching /duplicate/i but got 'not implemented'
+
+- Expected:
+/duplicate/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:268:58
+    266|         ],
+    267|       };
+    268|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    269|         /duplicate/i
+    270|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for empty question
+AssertionError: expected [Function] to throw error matching /question/i but got 'not implemented'
+
+- Expected:
+/question/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:284:58
+    282|         ],
+    283|       };
+    284|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    285|         /question/i
+    286|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for empty reason
+AssertionError: expected [Function] to throw error matching /reason/i but got 'not implemented'
+
+- Expected:
+/reason/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:300:58
+    298|         ],
+    299|       };
+    300|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    301|         /reason/i
+    302|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for recommendation that does not match any option label
+AssertionError: expected [Function] to throw error matching /recommendation/i but got 'not implemented'
+
+- Expected:
+/recommendation/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:317:58
+    315|         recommendation: "Z",
+    316|       };
+    317|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    318|         /recommendation/i
+    319|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > throws for option label equal to Write my own answer… (case-insensitive)
+AssertionError: expected [Function] to throw error matching /reserved|Write my own answer/i but got 'not implemented'
+
+- Expected:
+/reserved|Write my own answer/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:333:58
+    331|         ],
+    332|       };
+    333|       await expect(askUser(params, ui, false, undefined)).rejects.toTh…
+       |                                                          ^
+    334|         /reserved|Write my own answer/i
+    335|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > invalid inputs throw validation error and open no dialog > error message does not say not implemented
+AssertionError: expected 'not implemented' not to match /not implemented/i
+
+- Expected:
+/not implemented/i
+
++ Received:
+"not implemented"
+
+ ❯ tests/ask.test.ts:353:33
+    351|         expect.fail("should have thrown");
+    352|       } catch (err: any) {
+    353|         expect(err.message).not.toMatch(/not implemented/i);
+       |                                 ^
+    354|       }
+    355|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > returns cancelled dismissed when signal is already aborted
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:364:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/22]⎯
+
+ FAIL  tests/ask.test.ts > askUser > works with signal undefined
+Error: not implemented
+ ❯ askUser src/ask.ts:38:9
+     36|   signal: AbortSignal | undefined
+     37| ): Promise<Result> {
+     38|   throw new Error("not implemented");
+       |         ^
+     39| }
+     40|
+ ❯ tests/ask.test.ts:372:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/22]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  22 failed (22)
+   Start at  23:04:47
+   Duration  121ms (transform 59%, tests 21%, import 15%, worker 4%)
+
