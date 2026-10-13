@@ -28,7 +28,8 @@
 ## Rules for all agents
 - Read the installed Pi extension guide and UI type declarations before relying on any API. Do not guess signatures.
 - Do not run `git commit`, `git push`, or change branches. The humans commit.
-- Do not edit `AGENTS.md`, `briefs/`, `docs/`, `.gitignore`, or anything in `.git/`.
+- Do not edit `AGENTS.md`, `docs/`, `.gitignore`, or anything in `.git/`.
+- The orchestrator may write `briefs/` during W2-1 only; workers never edit `briefs/`. Humans review and commit briefs before dispatch.
 - Do not open or copy `examples/extensions/question.ts` or `examples/extensions/questionnaire.ts`. They are finished solutions and must not be used as reference or copied.
 - Do not add dependencies without approval from the orchestrator.
 - If a decision changes behavior, scope, or rework and nothing here settles it, stop and report it. Do not invent an answer.
@@ -41,11 +42,28 @@
 - `reason`: string, required, non-empty.
 - `options`: 2 or 3 items, each `{ label: string, tradeoff: string }`. Labels non-empty and unique (case-insensitive, trimmed).
 - `recommendation`: optional string. Must exactly match one option label.
+- An option label equal to `"Write my own answer…"` (case-insensitive, trimmed) is invalid.
 
 Invalid input returns an error to the model and opens no dialog.
 
 ### Settings
 - `executionMode`: `"sequential"` — one question at a time.
+
+### Dialog
+Check order:
+1. Validate input first. Invalid input throws an error and opens no dialog, regardless of UI.
+2. If `ctx.hasUI` is false → `{ status: "unavailable" }`.
+3. Open the dialog.
+
+`ctx.ui.select` title shows the `question` and `reason`. Entries: one per option as `<label> — <tradeoff>`, the recommended one suffixed ` (recommended)` but never preselected or used as a fallback; then a fixed last entry `Write my own answer…`.
+
+Map the selected string back to an option by its index in the entries list, never by parsing display text. `answer` is the bare option label.
+
+Choosing `Write my own answer…` opens `ctx.ui.input`. `undefined` → `{ status: "cancelled", reason: "dismissed" }`; empty or whitespace → `{ status: "cancelled", reason: "empty_answer" }`; otherwise `{ status: "answered", source: "custom", answer: <trimmed text> }`.
+
+`select` returning `undefined` → `{ status: "cancelled", reason: "dismissed" }`.
+
+Pass the tool's `AbortSignal` to `select` and `input`; an abort is `{ status: "cancelled", reason: "dismissed" }`.
 
 ### Result (exactly one of)
 - `{ status: "answered", source: "option", answer: <option label> }`

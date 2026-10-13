@@ -21,8 +21,13 @@ W2-0 → W2-1 ─┬→ W2-2 ─┐
 ## Rules
 - Agents never edit `docs/`.
 
-## Open contract questions (W2-0)
+## Resolved contract questions (W2-0)
 
-1. **How does the user choose a custom answer from `ctx.ui.select`?** `ctx.ui.select` returns one of the given strings. If the tool also offers a dedicated custom-answer entry, how is that distinguished, and what happens if an option label collides with that entry?
-2. **`briefs/` is forbidden to all agents in `AGENTS.md`, but the orchestrator writes briefs in W2-1.** Should `AGENTS.md` carve out an exception for the orchestrator during W2-1, or should brief authorship be treated as a human step?
-3. **Precedence when input is invalid AND UI is unavailable.** If the tool receives invalid parameters and the UI context is also unavailable (e.g. `ctx.hasUI === false`), should the result be an input validation error or `{ status: "unavailable" }`?
+1. **How does the user choose a custom answer from `ctx.ui.select`?**
+   - Decision: The last `select` entry is always `Write my own answer…`. Choosing it opens `ctx.ui.input`. See AGENTS.md "Tool contract → Dialog".
+
+2. **`briefs/` is forbidden to all agents in `AGENTS.md`, but the orchestrator writes briefs in W2-1.**
+   - Decision: The orchestrator may write `briefs/` during W2-1 only; workers never edit `briefs/`. Humans review and commit briefs before dispatch. See AGENTS.md "Rules for all agents".
+
+3. **Precedence when input is invalid AND UI is unavailable.**
+   - Decision: Validate input first. Invalid input throws an error and opens no dialog regardless of UI availability. Only after validation succeeds does the tool check `ctx.hasUI`. See AGENTS.md "Tool contract → Dialog".
