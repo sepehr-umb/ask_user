@@ -17,6 +17,9 @@
 - `src/`: extension source.
 - `tests/`: contract tests with a fake UI.
 
+## Pi imports
+`src/index.ts` uses `import type { ExtensionAPI } from "@earendil-works/pi-coding-agent"` and `import { Type } from "@earendil-works/pi-ai"`; Pi resolves these at load time. Interaction logic lives in a pure module (`src/ask.ts`) with no Pi imports so tests use a fake UI.
+
 ## Workers
 - Implementer: follow `briefs/W2-2-implementer.md`. The only worker allowed to edit `src/` and `tests/`.
 - Reviewer: follow `briefs/W2-3-reviewer.md`. Read-only. Return findings and proposed tests to the orchestrator.
@@ -26,6 +29,7 @@
 - Read the installed Pi extension guide and UI type declarations before relying on any API. Do not guess signatures.
 - Do not run `git commit`, `git push`, or change branches. The humans commit.
 - Do not edit `AGENTS.md`, `briefs/`, `docs/`, `.gitignore`, or anything in `.git/`.
+- Do not open or copy `examples/extensions/question.ts` or `examples/extensions/questionnaire.ts`. They are finished solutions and must not be used as reference or copied.
 - Do not add dependencies without approval from the orchestrator.
 - If a decision changes behavior, scope, or rework and nothing here settles it, stop and report it. Do not invent an answer.
 - Routine details like variable names and helper structure are yours to decide.
@@ -39,6 +43,9 @@
 - `recommendation`: optional string. Must exactly match one option label.
 
 Invalid input returns an error to the model and opens no dialog.
+
+### Settings
+- `executionMode`: `"sequential"` — one question at a time.
 
 ### Result (exactly one of)
 - `{ status: "answered", source: "option", answer: <option label> }`
